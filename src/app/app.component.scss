@@ -1,0 +1,474 @@
+/* + -------------------------- Variables -------------------------- + */
+
+$primary-blue: #475FDE;
+$secundary-blue: #6079FF;
+$primary-grey: #3E3E3E;
+
+/* + -------------------------- Mixins -------------------------- + */
+
+/* + -------------------------- Functions -------------------------- + */
+
+/* + -------------------------- Extends -------------------------- + */
+
+.cursor{
+    cursor: pointer;
+}
+
+/* + -------------------------- Styles -------------------------- + */
+
+.navBar{
+
+    color: white;
+    
+    & .infoNav{
+
+        background-color: $secundary-blue;
+
+        text-orientation: center;
+        display: flex;
+        align-items: center;
+        height: 5vh;
+
+        & img{
+            @extend .cursor;
+            width: 1.25em;
+            margin-left: .5em;
+            margin-right: .5em;
+        }
+        
+        & .img1{
+            margin-left: 2.5em;
+        }
+
+        & .separator1{
+            width: 5%;
+        }
+
+        & .separator2{
+            width: 40%;
+        }
+
+    }
+
+    & .navAction{
+
+        background-color: $primary-blue;
+    
+        text-orientation: center;
+        display: flex;
+        align-items: center;
+        height: 13vh;
+
+        & img{
+            @extend .cursor;
+            width: 4em;
+            margin-left: 2em;
+        }
+
+        & span{
+            @extend .cursor;
+            font-weight: 600;
+            font-size: larger;
+            margin-right: 1em;
+        }
+
+        .text1{
+            margin-left: 4em;            
+        }
+        
+        & .separator1{
+            width: 45%;
+        }
+
+        & button{
+            @extend .cursor;
+            color: white;
+            font-weight: 600;
+            font-size: larger;
+            background-color: $secundary-blue;
+            border: none;
+            border-radius: .6em;
+            width: 8.5em;
+            height: 2em;
+            &:hover{
+                background-color: $secundary-blue;
+                filter: brightness(92%);
+            }
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+    }
+
+}
+
+.initBackground {
+
+    position: relative; /* Para posicionar el pseudo-elemento */
+    height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+        content: ""; /* Necesario para crear un pseudo-elemento */
+        position: absolute; /* Posiciona el pseudo-elemento */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(../../public/asset/image.png);
+        background-size: 100%;
+        z-index: 1; /* Asegúrate de que esté detrás del contenido */
+    }
+
+    & div {
+    
+        position: relative; /* Asegura que esté por encima del pseudo-elemento */
+        z-index: 2; /* Asegúrate de que esté por encima */
+        color: white;
+    
+        & h3{
+            font-size: 3.5em;
+        }
+
+        & span{
+            font-size: 2.1em;
+        }
+
+    }
+
+}
+
+.whoPanel{
+
+    display: flex;
+    align-items: flex-start; /* Alinea verticalmente al inicio */
+    background-color: $primary-blue;
+    color: white;
+
+    & img{
+        width: 33em;
+        margin: 1.5em  1.5em 1.5em 1.5em;
+        display: inline-block;
+    }
+    & h3{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 2.5em;
+        margin-bottom: .5em;
+    }
+    & p{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 1.4em;
+        margin-bottom: .5em;
+        height: 230px;
+        overflow: auto;
+    }
+    
+    & .whoContent {
+        margin-top: 1.5em;
+        margin-right: 1.5em;
+        flex: 1; /* Permite que el contenido ocupe el espacio restante */
+    }
+
+    & .buttonContainer {
+        
+        display: flex; /* Permite flexibilidad */
+        align-items: center; /* Alinea el botón con el texto */
+        justify-content: center;
+        margin-top: 10px; /* Espacio entre el párrafo y el botón */
+
+        & button{
+            @extend .cursor;
+            background-color: white;
+            border: none;
+            color: $primary-blue;
+            width: 17em;
+            height: 2em;
+            font-weight: 500;
+            font-size: 1.5em;
+            border-radius: .3em;
+        }
+
+    }
+
+}
+
+.strategicAreas{
+
+    position: relative; /* Para posicionar el pseudo-elemento */
+    display: flex; /* Usa flexbox para organizar los hijos en fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas si es necesario */
+    justify-content: space-between; /* Espacio entre los elementos */
+    gap: 40px;
+
+    &::before {
+        content: ""; /* Necesario para crear un pseudo-elemento */
+        position: absolute; /* Posiciona el pseudo-elemento */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../../public/asset/image6.png);
+        background-size: 100%;
+        z-index: 1; /* Asegúrate de que esté detrás del contenido */
+    }
+
+    & h3{
+        color: white;
+        position: relative;
+        z-index: 2;
+        width: 100%; /* Asegura que el h3 ocupe todo el ancho */
+        text-align: center; /* Opcional: alinea el texto al centro */
+        margin-top: .7em;
+        font-size: 3em;
+    }
+    & div{
+        border-radius: 2em;
+        flex: 1 1 calc(10% - 20px); /* Ajusta el tamaño de cada panel con un margen */
+        box-sizing: border-box; /* Asegura que el padding y el margen se incluyan en el ancho total */
+        border-radius: 5px; /* Opcional: bordes redondeados */
+
+        & p{
+            margin: 0 1.5em 1.5em 1.5em;
+        }
+        margin-bottom: 3em;
+
+    }
+
+    & div img{
+        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+        width: 100%; /* Mantiene la proporción de la imagen */
+        border-top-left-radius: .3em;
+        border-top-right-radius: .3em;
+    }
+
+    & .educationPanel{
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        color: $primary-grey;
+        margin-left: 4em;
+    }
+    & .foodSafetyPanel{
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        color: $primary-grey;
+    }
+    & .developmentIntegralPanel{
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        color: $primary-grey;
+        margin-right: 4em;
+    }
+
+    & h5{
+        font-size: 1.8em;
+        text-align: center;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+}
+
+.odsSupport{
+
+    & h3{
+        text-align: center;
+        font-size: 3em;
+        color: $primary-blue;
+        margin-top: 1em;
+    }
+
+    & .imagesContainer {
+        display: flex; /* Usa Flexbox para alinear las imágenes */
+        justify-content: center; /* Centra las imágenes horizontalmente */
+        margin-top: 3em; /* Espacio entre el h3 y las imágenes */
+        margin-bottom: 5em
+    }
+
+    & .imagesContainer img {
+        @extend .cursor;
+        width: 16em; /* Establece el ancho de la imagen */
+        margin: 0 2em; /* Espacio entre las imágenes */
+    }
+
+}
+
+.footer{
+    
+    background-color: $primary-blue;
+    display: flex; /* Activa Flexbox */
+    align-items: center; /* Alineación vertical centrada */
+    justify-content: center; /* Alineación horizontal centrada */
+    height: 100px; /* Ajusta la altura según sea necesario */
+    padding: 10px; /* Espacio interno opcional */
+
+    & button{
+        @extend .cursor;
+        border-radius: 2em;
+        border: none;
+        height: 2em;
+        width: 13em;
+        font-size: 2em;
+        margin-top: .5em;
+        margin-bottom: .5em;
+        background-color: $secundary-blue;
+        color: white;
+        &:hover{
+            filter: brightness(94%);
+        }
+    }
+
+}
+
+/* + -------------------------- Responsive -------------------------- + */
+
+@media (min-width: 1920px) and (max-width: 1920px) {
+    
+    .navBar{
+
+        & .infoNav{
+
+            height: 3.7vh;
+
+            & img{
+                margin-left: .3em;
+                margin-right: .3em;
+            }
+
+            & span{
+                font-size: smaller;
+            }
+
+            & .img1{
+                margin-left: 2.5em;
+            }
+    
+            & .separator1{
+                width: 5%;
+            }
+    
+            & .separator2{
+                width: 58%;
+            }
+
+        }
+
+        & .navAction{
+
+            height: 10.8vh;
+
+            & img{
+                margin-left: 3em;
+            }
+
+            & span{
+                font-weight: 700;
+                font-size: 1.5em;
+                margin-right: 1em;
+            }
+
+            & .separator1{
+                width: 52%;
+            }
+
+            & button{
+                width: 8.5em;
+                height: 2.3em;
+                font-size: 1.7em;
+            }
+
+        }
+
+    }
+
+    .initBackground{
+
+        & div{
+    
+            & h3{
+                font-size: 5em;
+            }
+    
+            & span{
+                font-size: 2.9em;
+            }
+    
+        }
+    
+
+    }
+
+    .whoPanel{
+    
+        & img{
+            width: 49em;
+            margin: 3em  3em;
+        }
+
+        & h3{
+            font-size: 4em;
+            margin-top: .2em;
+        }
+        & p{
+            height: 340px;
+            font-size: 2.1em;
+        }
+
+        & .buttonContainer {
+        
+            & button{
+                width: 15em;
+                height: 2em;
+                font-weight: 400;
+                font-size: 2.3em;
+                margin-top: .3em;
+            }
+
+        }
+
+    }
+
+    .strategicAreas{
+
+        gap: 70px;
+
+        & div{
+            border-radius: 1.4em;
+            margin-bottom: 3.6em;
+        }
+
+        & div img{
+            border-top-left-radius: 1.3em;
+            border-top-right-radius: 1.3em;
+        }
+
+        & h3{
+            margin-top: 1.2em;
+            font-size: 4em;
+        }
+
+        & .educationPanel{
+            margin-left: 6em;
+        }
+
+        & .developmentIntegralPanel{
+            margin-right: 6em;
+        }
+
+
+        & h5{
+            font-size: 2.5em;
+        }
+
+        & p{
+            font-size: 1.6em;
+        }
+
+    }
+
+}
